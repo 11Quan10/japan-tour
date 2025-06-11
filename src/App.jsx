@@ -1,13 +1,23 @@
 import './App.css';
 import Day from './components/Day';
+import days from './data/days';
 
-const App = (props) => {
+const App = () => {
 	return (
         <div className='App'>
             <h1>10-Day Tour of Japan</h1>
-            <Day day={1}></Day>
-            <Day day={2}></Day>
-            <Day day={3}></Day>
+            <div className="days-container">
+                {days.map((info) => (
+                    <Day 
+                        key={info.day} 
+                        day={info.day} 
+                        title={info.title}
+                        city={info.city}
+                        description={info.description} 
+                        image={info.image} 
+                    />
+                ))}
+            </div>
         </div>
     );
 };
