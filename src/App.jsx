@@ -6,7 +6,7 @@ const App = () => {
 	return (
         <div className='App'>
             <h1>10-Day Tour of Japan</h1>
-            <div className="days-container">
+            <div className="days-grid">
                 {days.map((info) => (
                     <Day 
                         key={info.day} 
@@ -14,7 +14,8 @@ const App = () => {
                         title={info.title}
                         city={info.city}
                         description={info.description} 
-                        image={info.image} 
+                        image={info.image}
+                        link={info.link}
                     />
                 ))}
             </div>
